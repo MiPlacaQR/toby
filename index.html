@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carnet de mi perro</title>
+
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --accent:#ff6b6b;
+      --muted:#6b7280;
+      --shadow:0 8px 30px rgba(20,20,50,0.06);
+      --whats:#25D366;
+      --maps:#4285F4;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+
+    .card{width:100%;max-width:520px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);display:flex;overflow:hidden}
+
+    .left{width:180px;min-width:180px;background:linear-gradient(135deg,#2b8cff22,#6b46ff11);padding:20px;display:flex;flex-direction:column;align-items:center;gap:14px}
+    .photo{width:140px;height:140px;border-radius:12px;overflow:hidden;border:6px solid rgba(255,255,255,0.6);box-shadow:0 6px 18px rgba(20,20,50,0.12);background:#eee;display:flex;align-items:center;justify-content:center}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .badge{background:var(--accent);color:#fff;padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
+
+    .right{flex:1;padding:18px 18px 18px 20px;display:flex;flex-direction:column;gap:10px}
+    .header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+    .header h1{margin:0;font-size:18px}
+    .sub{color:var(--muted);font-size:13px}
+
+    .details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+    .field{background:#fbfdff;padding:10px;border-radius:8px;box-shadow:0 3px 8px rgba(15,18,30,0.03)}
+    .label{font-size:12px;color:var(--muted);margin-bottom:6px}
+    .value{font-weight:700;font-size:14px}
+    .full{grid-column:1/-1}
+
+    .meta{margin-top:auto;display:flex;gap:12px;align-items:center}
+    .btn-wrap{display:flex;gap:10px;align-items:center}
+
+    .square-btn{width:96px;height:96px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #eee;background:#fff;box-shadow:0 4px 12px rgba(15,18,30,0.06);text-decoration:none}
+    .square-btn svg{width:56px;height:56px}
+
+    .square-btn.whatsapp{background:linear-gradient(180deg,var(--whats),#14b159);border:none}
+    .square-btn.maps{background:linear-gradient(180deg,var(--maps),#2469d9);border:none}
+
+    .smallnote{font-size:13px;color:var(--muted)}
+
+    @media (max-width:640px){
+      body{padding:0}
+      .card{flex-direction:column;border-radius:0;max-width:100%;box-shadow:none}
+      .left{width:100%;min-width:unset;flex-direction:row;align-items:center;justify-content:flex-start;padding:14px;gap:12px}
+      .photo{width:110px;height:110px;border-radius:10px}
+      .badge{font-size:12px}
+      .right{padding:14px}
+      .details{grid-template-columns:1fr;gap:8px}
+      .square-btn{width:80px;height:80px}
+      .square-btn svg{width:44px;height:44px}
+      .header{flex-direction:row;align-items:center;gap:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="Carnet de identificación de mascota">
+
+    <div class="left">
+      <div class="photo">
+        <img src="images/dog.jpg" alt="Foto de mi perro">
+      </div>
+      <div style="text-align:center">
+        <div class="badge">CARNET</div>
+        <div class="sub" style="margin-top:6px;font-size:13px">ID: <strong>12345-AB</strong></div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="header">
+        <div>
+          <h1 style="font-size:18px;margin-bottom:4px">Rocky</h1>
+          <div class="sub">Carnet de Mascota</div>
+        </div>
+        <div style="text-align:right">
+          <div class="sub">Emitido: <strong>01/01/2025</strong></div>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="field">
+          <div class="label">Raza</div>
+          <div class="value">Mestizo</div>
+        </div>
+        <div class="field">
+          <div class="label">Edad</div>
+          <div class="value">3 años</div>
+        </div>
+
+        <div class="field full">
+          <div class="label">Dirección</div>
+          <div class="value">jr. las palmeras, mz. g, lt 18</div>
+        </div>
+
+        <div class="field full">
+          <div class="label">Teléfono</div>
+          <div class="value">+51 910 822 803</div>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div class="btn-wrap">
+          <a class="square-btn whatsapp" href="https://wa.me/51910822803" target="_blank" aria-label="Contactar por WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.373 0 .09 4.99.09 11.168c0 1.965.51 3.89 1.478 5.598L0 24l7.48-1.96A11.98 11.98 0 0 0 12 22.336C18.627 22.336 23.91 17.346 23.91 11.168a11.86 11.86 0 0 0-3.39-7.688z" fill="#fff"/>
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.1-.472-.149-.672.15s-.771.966-.945 1.164c-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.884-.789-1.48-1.763-1.653-2.06-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.199.05-.373-.025-.522-.075-.149-.672-1.62-.921-2.219-.242-.579-.487-.5-.672-.51l-.573-.01c-.199 0-.522.074-.797.373s-1.048 1.025-1.048 2.5 1.073 2.894 1.223 3.096c.149.199 2.11 3.22 5.113 4.514 3.003 1.297 3.003.865 3.548.813.546-.05 1.777-.724 2.03-1.423.254-.698.254-1.297.177-1.423-.074-.124-.273-.199-.57-.348z" fill="#25D366"/>
+            </svg>
+          </a>
+
+          <a class="square-btn maps" 
+             href="https://www.google.com/maps/place/Plaza+Mayor+de+Huamanga,+Ayacucho/@-13.1607275,-74.2261505,18.5z/data=!4m15!1m8!3m7!1s0x91127d88f5b2bee9:0xe9b3cb843a70a16e!2sAyacucho!3b1!8m2!3d-13.1638737!4d-74.2235641!16zL20vMDJwZ252!3m5!1s0x91127df3a774ab1f:0xa8754afd6ff9a870!8m2!3d-13.1603789!4d-74.2257816!16zL20vMDR5NG42?entry=ttu&g_ep=EgoyMDI1MTEyMC4xIKXMDSoASAFQAw%3D%3D" 
+             target="_blank" aria-label="Abrir en Google Maps">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#fff"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- 🔵 TEXTO CAMBIADO -->
+        <div class="smallnote">Si encontraste a Rocky, por favor comunícate para llevarme a casa.</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
