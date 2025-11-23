@@ -18,52 +18,174 @@
     }
 
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+    body{
+      margin:0;
+      background:var(--bg);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
 
-    .card{width:100%;max-width:520px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);display:flex;overflow:hidden}
+    .card{
+      width:100%;
+      max-width:520px;
+      background:var(--card);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      display:flex;
+      overflow:hidden;
+      flex-direction:row;
+    }
 
-    .left{width:180px;min-width:180px;background:linear-gradient(135deg,#2b8cff22,#6b46ff11);padding:20px;display:flex;flex-direction:column;align-items:center;gap:14px}
+    /* IZQUIERDA */
+    .left{
+      width:180px;
+      min-width:180px;
+      background:linear-gradient(135deg,#2b8cff22,#6b46ff11);
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+    }
 
-    .photo{width:140px;height:140px;border-radius:12px;overflow:hidden;border:6px solid rgba(255,255,255,0.6);box-shadow:0 6px 18px rgba(20,20,50,0.12);background:#eee;display:flex;align-items:center;justify-content:center}
-    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .photo{
+      width:140px;
+      height:140px;
+      border-radius:12px;
+      overflow:hidden;
+      border:6px solid rgba(255,255,255,0.6);
+      box-shadow:0 6px 18px rgba(20,20,50,0.12);
+      background:#eee;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
-    /* Nuevo botón VER FOTOS */
     .photo-btn{
       background:var(--accent);
       color:#fff;
-      padding:8px 14px;
+      padding:10px 16px;
       border-radius:10px;
       font-weight:700;
-      font-size:13px;
+      font-size:14px;
       cursor:pointer;
       text-align:center;
       transition:.2s;
+      width:100%;
     }
     .photo-btn:hover{opacity:.8}
 
-    .sub{color:var(--muted);font-size:13px}
+    .sub{
+      color:var(--muted);
+      font-size:14px;
+      text-align:center;
+    }
 
-    .right{flex:1;padding:18px 18px 18px 20px;display:flex;flex-direction:column;gap:10px}
-    .header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-    .header h1{margin:0;font-size:18px}
+    /* DERECHA */
+    .right{
+      flex:1;
+      padding:18px 18px 18px 20px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
 
-    .details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
-    .field{background:#fbfdff;padding:10px;border-radius:8px;box-shadow:0 3px 8px rgba(15,18,30,0.03)}
-    .label{font-size:12px;color:var(--muted);margin-bottom:6px}
-    .value{font-weight:700;font-size:14px}
-    .full{grid-column:1/-1}
+    .header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .header h1{
+      margin:0;
+      font-size:20px;
+    }
 
-    .meta{margin-top:auto;display:flex;flex-direction:column;gap:16px;align-items:center}
-    .btn-wrap{display:flex;gap:30px;align-items:center}
+    .details{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:6px;
+    }
 
-    .square-btn{width:96px;height:96px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #eee;background:#fff;box-shadow:0 4px 12px rgba(15,18,30,0.06);text-decoration:none}
-    .square-btn svg{width:56px;height:56px}
-    .square-btn.whatsapp{background:linear-gradient(180deg,var(--whats),#14b159);border:none}
-    .square-btn.maps{background:linear-gradient(180deg,var(--maps),#2469d9);border:none}
+    .field{
+      background:#fbfdff;
+      padding:12px;
+      border-radius:8px;
+      box-shadow:0 3px 8px rgba(15,18,30,0.03);
+    }
 
-    .btn-text{font-size:13px;color:#555;text-align:center;margin-top:6px;width:100px}
+    .label{
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
 
-    /* Modal */
+    .value{
+      font-weight:700;
+      font-size:15px;
+    }
+
+    .full{
+      grid-column:1/-1;
+    }
+
+    .meta{
+      margin-top:auto;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      align-items:center;
+    }
+
+    .btn-wrap{
+      display:flex;
+      gap:25px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .square-btn{
+      width:90px;
+      height:90px;
+      border-radius:14px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid #eee;
+      background:#fff;
+      box-shadow:0 4px 12px rgba(15,18,30,0.06);
+      text-decoration:none;
+    }
+    .square-btn svg{width:50px;height:50px}
+    .square-btn.whatsapp{
+      background:linear-gradient(180deg,var(--whats),#14b159);
+      border:none;
+    }
+    .square-btn.maps{
+      background:linear-gradient(180deg,var(--maps),#2469d9);
+      border:none;
+    }
+    .btn-text{
+      font-size:13px;
+      color:#555;
+      text-align:center;
+      margin-top:6px;
+      width:95px;
+    }
+
+    /* MODAL */
     .modal{
       position:fixed;
       inset:0;
@@ -75,15 +197,21 @@
       visibility:hidden;
       opacity:0;
       transition:.25s;
+      padding:20px;
     }
-    .modal.open{visibility:visible;opacity:1}
+    .modal.open{
+      visibility:visible;
+      opacity:1;
+    }
 
     .modal-content{
       background:white;
-      width:90%;
-      max-width:420px;
+      width:100%;
+      max-width:430px;
+      max-height:90vh;
       padding:20px;
       border-radius:14px;
+      overflow-y:auto;
       box-shadow:0 8px 30px rgba(0,0,0,.2);
       text-align:center;
     }
@@ -91,20 +219,65 @@
     .modal img{
       width:100%;
       border-radius:10px;
-      margin-bottom:12px;
+      margin-bottom:14px;
     }
 
     .close-btn{
       margin-top:10px;
       background:#444;
       color:white;
-      padding:8px 14px;
+      padding:10px 16px;
       border-radius:10px;
       cursor:pointer;
+      font-size:15px;
+    }
+
+    /* ---------------------------
+       ADAPTACIÓN A CELULARES
+    ----------------------------*/
+    @media (max-width: 600px){
+      .card{
+        flex-direction:column;
+      }
+      .left{
+        width:100%;
+        min-width:100%;
+        padding:20px;
+      }
+      .photo{
+        width:160px;
+        height:160px;
+      }
+      .right{
+        padding:16px;
+      }
+      .header h1{
+        font-size:22px;
+        text-align:center;
+      }
+      .header{
+        justify-content:center;
+        text-align:center;
+      }
+      .details{
+        grid-template-columns:1fr;
+      }
+      .square-btn{
+        width:85px;
+        height:85px;
+      }
+      .btn-wrap{
+        gap:18px;
+      }
+      .btn-text{
+        width:100%;
+        font-size:14px;
+      }
     }
 
   </style>
 </head>
+
 <body>
 
   <div class="card">
@@ -115,7 +288,6 @@
         <img src="images/dog.jpg" alt="Foto de mi perro">
       </div>
 
-      <!-- NUEVO BOTÓN VER FOTOS -->
       <div class="photo-btn" onclick="openModal()">VER FOTOS</div>
 
       <div class="sub">ID: <strong>Rocky</strong></div>
@@ -123,6 +295,7 @@
 
     <!-- DERECHA -->
     <div class="right">
+
       <div class="header">
         <div>
           <h1>Rocky</h1>
@@ -132,10 +305,12 @@
       </div>
 
       <div class="details">
+
         <div class="field">
           <div class="label">Raza</div>
           <div class="value">Mestizo</div>
         </div>
+
         <div class="field">
           <div class="label">Edad</div>
           <div class="value">3 años</div>
@@ -150,6 +325,7 @@
           <div class="label">Teléfono</div>
           <div class="value">+51 950 196 501</div>
         </div>
+
       </div>
 
       <div class="meta">
@@ -175,6 +351,7 @@
       </div>
 
     </div>
+
   </div>
 
   <!-- MODAL -->
@@ -198,4 +375,3 @@
 
 </body>
 </html>
-
